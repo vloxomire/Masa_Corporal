@@ -8,8 +8,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.masa_corporal.Actividades.Main2Activity;
+import com.example.masa_corporal.Actividades.Activity2;
 import com.example.masa_corporal.Actividades.MainActivity;
+import com.example.masa_corporal.SharedPreference.Shared;
 
 import org.json.JSONObject;
 
@@ -117,7 +118,7 @@ public class Listener_calcular implements View.OnClickListener {
 
                 /*<<<<Paso los valores obtenidos por el sharedPreference>>>>>*/
                 //porque es un metodo estatico(me permite acceder a un metodo de una clase sin instanciarla) del contexto,por eso es el get
-                SharedPreferences shared = context.getSharedPreferences("valores",Context.MODE_PRIVATE);
+                /*SharedPreferences shared = context.getSharedPreferences("valores",Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = shared.edit();
 
                 editor.putString("value",valueJason);
@@ -125,9 +126,15 @@ public class Listener_calcular implements View.OnClickListener {
                 editor.putString("ideal_weight",ideal_weightJason);
                 editor.putString("risk",riskJason);
 
-                editor.commit();
+                editor.commit();*/
 
-                Intent intent= new
+                Shared.setSharedPrefenceVariables(context,"value", valueJason);
+                Shared.setSharedPrefenceVariables(context,"status",statusJason);
+                Shared.setSharedPrefenceVariables(context,"ideal_weight",ideal_weightJason);
+                Shared.setSharedPrefenceVariables(context,"risk",riskJason);
+
+                Intent intent= new Intent(context,Activity2.class);
+                context.startActivity(intent);
 
 
             } catch (Exception e) {
