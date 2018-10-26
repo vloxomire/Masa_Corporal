@@ -41,9 +41,7 @@ public class Listener_calcular implements View.OnClickListener {
 
         //Creo un objeto jsonMasa
         new jsonMasa(peso, altura, genero, edad).execute("https://bmi.p.mashape.com/");
-        //Intent cambio de Activity
-        Intent intent = new Intent(context, Main2Activity.class);
-        context.startActivity(intent);
+
     }
 
     private class jsonMasa extends AsyncTask<String,Void,String> {
@@ -118,8 +116,8 @@ public class Listener_calcular implements View.OnClickListener {
                 String riskJason= jsonBmi.getString("risk");
 
                 /*<<<<Paso los valores obtenidos por el sharedPreference>>>>>*/
-                SharedPreferences shared = getSharedPreferences("valores",Context.MODE_PRIVATE);
-
+                //porque es un metodo estatico(me permite acceder a un metodo de una clase sin instanciarla) del contexto,por eso es el get
+                SharedPreferences shared = context.getSharedPreferences("valores",Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = shared.edit();
 
                 editor.putString("value",valueJason);
@@ -128,6 +126,8 @@ public class Listener_calcular implements View.OnClickListener {
                 editor.putString("risk",riskJason);
 
                 editor.commit();
+
+                Intent intent= new
 
 
             } catch (Exception e) {
