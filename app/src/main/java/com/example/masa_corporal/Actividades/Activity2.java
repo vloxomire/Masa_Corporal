@@ -21,7 +21,7 @@ public class Activity2 extends AppCompatActivity {
         editTuPesoIdeal = findViewById(R.id.editTuPesoIdeal);
         editTuRiesgo = findViewById(R.id.editTuRiesgo);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("valores", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("miShared", Context.MODE_PRIVATE);
 
         String masa =  sharedPreferences.getString("value","");
         String estado = sharedPreferences.getString("status","");
