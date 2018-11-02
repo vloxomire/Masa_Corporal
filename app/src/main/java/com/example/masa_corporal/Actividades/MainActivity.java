@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         Listener_calcular listCalcular=new Listener_calcular(this);
         calcular.setOnClickListener(listCalcular);
 
-        SharedPreferences preferences=getSharedPreferences("valores", Context.MODE_PRIVATE);
+        /*SharedPreferences preferences=getSharedPreferences("valores", Context.MODE_PRIVATE);
         //Shared
         SharedPreferences.Editor editor=preferences.edit();
         editor.putString("peso", String.valueOf(peso));
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         Long genero= getGenero().getSelectedItemId();
         editor.putLong("genero",genero);
         editor.putString("edad", String.valueOf(edad));
-        editor.commit();
+        editor.commit();*/
 
 
 
