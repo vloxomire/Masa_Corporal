@@ -118,15 +118,6 @@ public class Listener_calcular implements View.OnClickListener {
 
                 /*<<<<Paso los valores obtenidos por el sharedPreference>>>>>*/
                 //porque es un metodo estatico(me permite acceder a un metodo de una clase sin instanciarla) del contexto,por eso es el get
-                /*SharedPreferences shared = context.getSharedPreferences("valores",Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = shared.edit();
-
-                editor.putString("value",valueJason);
-                editor.putString("status",statusJason);
-                editor.putString("ideal_weight",ideal_weightJason);
-                editor.putString("risk",riskJason);
-
-                editor.commit();*/
 
                 Shared.setSharedPrefenceVariables(context,"value", valueJason);
                 Shared.setSharedPrefenceVariables(context,"status",statusJason);
