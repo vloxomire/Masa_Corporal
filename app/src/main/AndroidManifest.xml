@@ -31,6 +31,7 @@
                 android:resource="@xml/new_app_widget_info" />
         </receiver>
 
+        <activity android:name=".Actividades.lista"></activity>
     </application>
 
 </manifest>
